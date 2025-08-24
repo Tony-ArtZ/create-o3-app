@@ -148,6 +148,16 @@ async function handleGitInit(
   }
 }
 
+async function handleDocker(
+  answers: O3StackAnswers,
+  target: string
+): Promise<void> {
+  if (!answers.docker) return;
+
+  const dockerPath = path.resolve(getCurrentDir(), "../templates/docker/base");
+  await copyTemplateWithPartials(dockerPath, target, answers, undefined);
+}
+
 // Dependency installation
 async function handleDependencyInstallation(
   answers: O3StackAnswers,
@@ -302,6 +312,9 @@ async function main(): Promise<void> {
 
   // Handle git initialization
   await handleGitInit(answers, target);
+
+  // Handle Dockerfile addition
+  await handleDocker(answers, target);
 
   // Merge Partials
   await mergePackageJson(target, partials);

@@ -55,6 +55,7 @@ The **O3 Stack** is T3's unhinged sibling. We took everything great about T3 and
 - 🗄️ **[Drizzle ORM](https://orm.drizzle.team/)** - SQL that doesn't hate you
 - ✅ **[ArkType](https://arktype.io/)** - Runtime validation that's actually fast
 - ⚡ **[Next.js 15](https://nextjs.org/)** - Because we live on the bleeding edge
+- 🗄️ **[NeonDB](https://neon.com/)** - Who has time to setup a Database ?
 
 ---
 
@@ -112,12 +113,12 @@ npx create-o3-app@latest \
 🎯 **Next.js 15** with App Router and all the latest features  
 🎨 **Tailwind CSS** because life's too short for custom CSS  
 📝 **Full TypeScript** with strict mode enabled  
-🔧 **Perfect tooling** - ESLint, Prettier, everything configured
+🔧 **Perfect tooling** - Biome, Prettier, everything configured
 
 **Plus your selected goodies:**
 
 - 🔐 **Authentication** with secure defaults and auto-generated secrets
-- 🗄️ **Database** with type-safe queries and automatic migrations
+- 🗄️ **Database** pre-configured NeonDB with type-safe queries and automatic migrations
 - 📡 **oRPC** for type-safe client-server communication
 - 🐳 **Docker** ready for deployment anywhere
 
