@@ -3,9 +3,6 @@ import path from "path";
 
 export function mergePackageJson(targetDir: string, partials: string[]) {
   const basePath = path.join(targetDir, "package.json");
-  const base = fs.existsSync(basePath)
-    ? JSON.parse(fs.readFileSync(basePath, "utf8"))
-    : {};
 
   const merged = partials.reduce((acc, partialPath) => {
     if (!fs.existsSync(partialPath)) return acc;
@@ -45,7 +42,7 @@ export function mergePackageJson(targetDir: string, partials: string[]) {
     }
 
     return acc;
-  }, base);
+  }, {});
 
   fs.writeFileSync(basePath, JSON.stringify(merged, null, 2));
   return merged;
